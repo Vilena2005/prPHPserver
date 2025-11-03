@@ -7,12 +7,6 @@
 @section('content')
 <main>
     <div class="container">
-{{--        <select name="sort" id="sort-list">--}}
-{{--            <option value="">Сортировка</option>--}}
-{{--            <option value="by-division">по подразделениям</option>--}}
-{{--            <option value="by-birth">по дате рождения</option>--}}
-{{--            <option value="by-id">по ID</option>--}}
-{{--        </select>--}}
         <div class="create-wrap">
             <a class="create" href="{{ route('add.newabonent') }}">Создать</a>
         </div>
@@ -26,16 +20,21 @@
                         <h3 class="main-title">Имя</h3>
                         <h3 class="main-title">Отчество</h3>
                         <h3 class="main-title">Дата рождения</h3>
-                        <h3 class="main-title">Подразделение</h3>
                         <h3 class="main-title">Телефон</h3>
+                        <h3 class="main-title">Подразделение</h3>
                     </div>
-                    {{--                        @foreach($divisions as $division)--}}
-                    {{--                            <div class="list-item">--}}
-                    {{--                                <p class="list">{{ $division->division_name }}</p>--}}
-                    {{--                                <p class="list">{{ $division->division_type }}</p>--}}
-                    {{--                            </div>--}}
-                    {{--                        @endforeach--}}
+                    @foreach($abonents as $abonent)
+                        <div class="list-item">
+                            <p class="list">{{ $abonent->surname }}</p>
+                            <p class="list">{{ $abonent->name }}</p>
+                            <p class="list">{{ $abonent->patronym }}</p>
+                            <p class="list">{{ $abonent->birth_date }}</p>
+                            <p class="list">{{ $abonent->phone }}</p>
+                            <p class="list">{{ $abonent->division->division_name }}</p>
+                        </div>
+                    @endforeach
                 </div>
+
             </div>
         </div>
 

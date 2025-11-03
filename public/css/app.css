@@ -173,6 +173,13 @@ body {
     gap: 50px;
     padding: 0 0 50px;
 }
+.form-auth {
+    font-family: 'Inter';
+    background-color: #E5E5E5;
+    border: transparent;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
 .login-form-items{
     display: flex;
     flex-direction: column;
@@ -220,9 +227,6 @@ body {
     margin: 15px 0px 15px;
 }
 
-input {
-    width: 100%;
-}
 /* add-abonent start*/
 .add-abonent {
     display: flex;

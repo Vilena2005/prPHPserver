@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('login')->unique();
             $table->string('password');
-            $table->unsignedTinyInteger('role');
+            $table->unsignedTinyInteger('role')->default(1);
         });
     }
 

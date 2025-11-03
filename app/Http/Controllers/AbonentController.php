@@ -8,22 +8,25 @@ use Illuminate\Http\Request;
 
 class AbonentController extends Controller
 {
-    public function create()
+    public function add ()
     {
-        // Получаем все подразделения для выпадающего списка
         $divisions = Division::all();
         return view('add.newabonent', compact('divisions'));
     }
-    public function see ()
-    {
-        return view('add.newabonent');
-    }
+
     public function abon ()
     {
-        $divisions = Division::all();
-        return view('division', [
-            'divisions' => $divisions
-        ]);
+        $abonents = Abonent::with('division')->get();
+        return view('list', compact('abonents'));
+
+
+//        return view('list');
+
+
+//        $divisions = Abonent::all();
+//        return view('division', [
+//            'divisions' => $divisions
+//        ]);
     }
 
     public function store (Request $request)
@@ -33,7 +36,8 @@ class AbonentController extends Controller
             'name' => 'required|string|min:3|max:255',
             'patronym' => 'required|string|min:3|max:255',
             'birth_date' => 'required',
-            'phone' => 'required|max:15',
+            'phone' => 'required|string|max:15',
+            'division_id' => 'required|exists:divisions,id',
         ]);
 
         Abonent::create([
@@ -42,6 +46,7 @@ class AbonentController extends Controller
             'patronym' => $validated ['patronym'],
             'birth_date' => $validated ['birth_date'],
             'phone' => $validated ['phone'],
+            'division_id' => $validated ['division_id'],
         ]);
 
         return redirect('list');

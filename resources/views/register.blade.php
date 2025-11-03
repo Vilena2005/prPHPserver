@@ -19,9 +19,9 @@
 
                 <form action="{{ route('register') }}" method="post" class="login-form-items">
                     @csrf
-                    <input name="name" type="text" class="form-control" placeholder="Имя">
-                    <input name="login" type="text" class="form-control" placeholder="Логин">
-                    <input name="password" type="password" class="form-control" placeholder="Пароль">
+                    <input name="name" type="text" class="form-auth" placeholder="Имя">
+                    <input name="login" type="text" class="form-auth" placeholder="Логин">
+                    <input name="password" type="password" class="form-auth" placeholder="Пароль">
 
                     <button type="submit" class="btn-success">Регистрация</button>
                 </form>

@@ -4,25 +4,14 @@
      <title>Подразделения</title>
 @endsection
 
-@section('add-button')
-
-@endsection
-
 @section('content')
     <main>
         <div class="container">
             <div>
-{{--                <select name="sort" id="sort-list">--}}
-{{--                    <option value="">Сортировка</option>--}}
-{{--                    <option value="by-division">по подразделениям</option>--}}
-{{--                    <option value="by-birth">по дате рождения</option>--}}
-{{--                    <option value="by-id">по ID</option>--}}
-{{--                </select>--}}
                 <div class="create-wrap">
                     <a class="create" href="{{ route('add.newdivision') }}">Создать</a>
                 </div>
             </div>
-
 
             <div class="main-items-wrap">
                 <div class="main-item-title">
@@ -41,6 +30,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 @endsection

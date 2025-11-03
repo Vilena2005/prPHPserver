@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class DivisionController extends Controller
 {
+
     public function display ()
     {
         $divisions = Division::all();
-        return view('division', [
-            'divisions' => $divisions
-        ]);
+        return view('division', compact('divisions'));
+
+//        return view('add.newabonent', compact('divisions'));
     }
 
     public function div ()

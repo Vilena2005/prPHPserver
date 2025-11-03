@@ -14,7 +14,7 @@
 
                     <div class="add-phone-item">
                         <label class="add-phone-title">Имя</label>
-                        <input name="room" type="text" class="add-phone-input-form" placeholder="Алексей" required>
+                        <input name="name" type="text" class="add-phone-input-form" placeholder="Алексей" required>
                     </div>
 
                     <div class="add-phone-item">
@@ -34,6 +34,18 @@
                     @error('phone')
                         <p>Неправильный номер телефона</p>
                     @enderror
+                    <div class="add-phone-item">
+                        <label class="add-phone-title">Подразделение</label>
+                        <select name="division_id" class="form-select" id="sort-list" required>
+                            <option value="">Выберите подразделение</option>
+                            @foreach($divisions as $division)
+                                <option value="{{ $division->id }}">
+                                    {{ $division->division_name }} ({{ $division->division_type }})
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
                     <button type="submit" class="button-submit">Добавить</button>
                 </form>

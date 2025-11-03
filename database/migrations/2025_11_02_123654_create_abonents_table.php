@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('patronym');
             $table->date('birth_date');
-            $table->integer('phone')->unique();
-            $table->foreignId('division_name');
+            $table->string('phone')->unique();
+            $table->foreignId('division_id');
         });
     }
 

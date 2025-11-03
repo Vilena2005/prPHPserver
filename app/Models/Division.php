@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Division extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
 
     protected $fillable = ['division_name', 'division_type'];
 
-    use HasFactory;
+    public function abonents()
+    {
+        return $this->hasMany(Abonent::class);
+    }
 }

@@ -29,8 +29,7 @@ Route::middleware('auth')->group(function () {
 
 //Абоненты
     Route::get('/list', [\App\Http\Controllers\AbonentController::class, 'abon'])->name('list');
-
-    Route::get('/add/newabonent', [\App\Http\Controllers\AbonentController::class, 'see'])->name('add.newabonent');
+    Route::get('/add/newabonent', [\App\Http\Controllers\AbonentController::class, 'add'])->name('add.newabonent');
     Route::post('/add/newabonent', [\App\Http\Controllers\AbonentController::class, 'store'])->name('store');
 
 //Подразделения
