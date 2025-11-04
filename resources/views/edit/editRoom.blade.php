@@ -4,8 +4,9 @@
     <main>
         <div class="container">
             <div class="add-room">
-                <form action="{{ route('make') }}" method="post" class="form-wrap">
+                <form action="{{ route('change', $room->id) }}" method="post" class="form-wrap">
                     @csrf
+                    @method('PUT')
                     <div class="add-phone-item">
                         <label class="add-phone-title">Номер помещения</label>
                         <input name="room_number" type="text" class="add-phone-input-form" placeholder="100B" required>
@@ -30,7 +31,13 @@
 
                     <button type="submit" class="button-submit">Добавить</button>
                 </form>
-                <a class="button-reset">Удалить</a>
+{{--                <a class="button-reset">Удалить</a>--}}
+
+                <form action="{{ route('remove', $room->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="button-reset">Удалить</button>
+                </form>
 
             </div>
         </div>

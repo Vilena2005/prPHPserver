@@ -32,12 +32,27 @@ Route::middleware('auth')->group(function () {
     Route::get('/add/newabonent', [\App\Http\Controllers\AbonentController::class, 'add'])->name('add.newabonent');
     Route::post('/add/newabonent', [\App\Http\Controllers\AbonentController::class, 'store'])->name('store');
 
+    //редактирование и удаление абонента
+    Route::get('/edit/{id}/editAbonent', [\App\Http\Controllers\AbonentController::class, 'edit'])->name('edit');
+    Route::put('/edit/{id}/editAbonent', [\App\Http\Controllers\AbonentController::class, 'update'])->name('update');
+    Route::delete('/edit/{id}/editAbonent', [\App\Http\Controllers\AbonentController::class, 'destroy'])->name('destroy');
+
 //Подразделения
     Route::get('/division', [\App\Http\Controllers\DivisionController::class, 'display'])->name('division');
     Route::get('/add/newdivision', [\App\Http\Controllers\DivisionController::class, 'div'])->name('add.newdivision');
     Route::post('/add/newdivision', [\App\Http\Controllers\DivisionController::class, 'create'])->name('create');
 
 //Помещения
+    Route::get('/rooms', [\App\Http\Controllers\RoomController::class, 'room'])->name('rooms');
+    Route::get('/add/newroom', [\App\Http\Controllers\RoomController::class, 'new'])->name('add.newroom');
+    Route::post('/add/newroom', [\App\Http\Controllers\RoomController::class, 'make'])->name('make');
+
+    //редактирование и удаление помещения
+    Route::get('/edit/{id}/editRoom', [\App\Http\Controllers\RoomController::class, 'modify'])->name('modify');
+    Route::put('/edit/{id}/editRoom', [\App\Http\Controllers\RoomController::class, 'change'])->name('change');
+    Route::delete('/edit/{id}/editRoom', [\App\Http\Controllers\RoomController::class, 'remove'])->name('remove');
+
+//    Route::get('/delete/deleteRoom', [\App\Http\Controllers\RoomController::class, 'modify'])->name('modify');
 
 });
 

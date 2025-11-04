@@ -17,4 +17,9 @@ class Division extends Model
     {
         return $this->hasMany(Abonent::class);
     }
+
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
 }

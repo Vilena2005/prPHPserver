@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('room_number');
             $table->string('room_type');
-            $table->foreignId('division_name');
+            $table->foreignId('division_id');
         });
     }
 

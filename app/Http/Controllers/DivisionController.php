@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Division;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class DivisionController extends Controller
 {
@@ -13,11 +14,14 @@ class DivisionController extends Controller
         $divisions = Division::all();
         return view('division', compact('divisions'));
 
-//        return view('add.newabonent', compact('divisions'));
     }
 
     public function div ()
     {
+        if (Gate::denies('create-all')) {
+            abort(403);
+        }
+
         return view('add.newdivision');
     }
 

@@ -7,11 +7,14 @@
 @section('content')
     <main>
         <div class="container">
-            <div>
-                <div class="create-wrap">
-                    <a class="create" href="{{ route('add.newdivision') }}">Создать</a>
+            @can('create-all')
+                <div>
+                    <div class="create-wrap">
+                        <a class="create" href="{{ route('add.newdivision') }}">Создать</a>
+                    </div>
                 </div>
-            </div>
+            @endcan
+
 
             <div class="main-items-wrap">
                 <div class="main-item-title">

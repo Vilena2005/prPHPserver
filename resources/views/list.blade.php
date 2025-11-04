@@ -7,9 +7,12 @@
 @section('content')
 <main>
     <div class="container">
+
+        @can('create-all')
         <div class="create-wrap">
             <a class="create" href="{{ route('add.newabonent') }}">Создать</a>
         </div>
+        @endcan
 
         <div class="main-items-wrap">
             <div class="main-item-title">
@@ -25,14 +28,16 @@
                     </div>
                     @foreach($abonents as $abonent)
                         <div class="list-item">
-                            <p class="list">{{ $abonent->surname }}</p>
+                            <a href="{{ route('edit', $abonent->id) }}" class="list">{{ $abonent->surname }}</a>
                             <p class="list">{{ $abonent->name }}</p>
                             <p class="list">{{ $abonent->patronym }}</p>
                             <p class="list">{{ $abonent->birth_date }}</p>
                             <p class="list">{{ $abonent->phone }}</p>
                             <p class="list">{{ $abonent->division->division_name }}</p>
                         </div>
+
                     @endforeach
+
                 </div>
 
             </div>
