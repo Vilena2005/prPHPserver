@@ -30,7 +30,6 @@
 
                     <button type="submit" class="button-submit">Добавить</button>
                 </form>
-                <a class="button-reset">Удалить</a>
 
             </div>
         </div>

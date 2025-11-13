@@ -40,4 +40,27 @@ class DivisionController extends Controller
 
         return redirect('division');
     }
+
+//    public function transform ($id)
+//    {
+////        if (Gate::denies('create-all')) {
+////            abort(403);
+////        }
+//
+//        $divisions = Division::findOrFail($id);
+//        return view('edit.editDivision', compact('divisions'));
+//    }
+//
+//    public function reverse (Request $request, $id)
+//    {
+//        $validated = $request->validate([
+//            'division_name' => 'required|string|min:3|max:255',
+//            'division_type' => 'required|string|min:3|max:255',
+//        ]);
+//
+//        $division = Division::findOrFail($id);
+//        $division->update($validated);
+//
+//        return redirect('division');
+//    }
 }

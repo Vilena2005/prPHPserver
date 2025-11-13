@@ -26,8 +26,8 @@
                         @foreach($rooms as $room)
                             <div class="list-item">
                                 <a href="{{ route('modify', $room->id) }}" class="list">{{ $room->room_number }}</a>
-                                <p class="list">{{ $room->room_type }}</p>
-                                <p class="list">{{ $room->division->division_name }}</p>
+                                <a href="{{ route('modify', $room->id) }}" class="list">{{ $room->room_type }}</a>
+                                <a class="list">{{ $room->division->division_name }}</a>
                             </div>
                         @endforeach
                     </div>

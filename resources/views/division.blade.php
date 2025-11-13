@@ -11,6 +11,7 @@
                 <div>
                     <div class="create-wrap">
                         <a class="create" href="{{ route('add.newdivision') }}">Создать</a>
+
                     </div>
                 </div>
             @endcan
@@ -26,6 +27,7 @@
                         </div>
                     @foreach($divisions as $division)
                         <div class="list-item">
+{{--                            <a href="{{ route('transform', $division->id) }}" class="list">{{ $division->division_name }}</a>--}}
                             <p class="list">{{ $division->division_name }}</p>
                             <p class="list">{{ $division->division_type }}</p>
                         </div>

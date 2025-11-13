@@ -1,16 +1,14 @@
 @extends('template')
 
-@section('title')
-    <title>Добавить подразделение</title>
-@endsection
 
 @section('content')
     <main>
         <div class="container">
             <div class="add-division">
 
-                <form action="{{ route('create') }}" method="post" class="add-division-item">
+                <form action="{{ route('reverse', $division->id) }}" method="post" class="add-division-item">
                     @csrf
+                    @method('PUT')
                     <div class="add-item">
                         <label class="add-division-title">Название подразделения</label>
                         <input name="division_name" type="text" class="add-input-form" placeholder="Сборочный цех" required>

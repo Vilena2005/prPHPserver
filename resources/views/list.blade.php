@@ -29,10 +29,10 @@
                     @foreach($abonents as $abonent)
                         <div class="list-item">
                             <a href="{{ route('edit', $abonent->id) }}" class="list">{{ $abonent->surname }}</a>
-                            <p class="list">{{ $abonent->name }}</p>
-                            <p class="list">{{ $abonent->patronym }}</p>
-                            <p class="list">{{ $abonent->birth_date }}</p>
-                            <p class="list">{{ $abonent->phone }}</p>
+                            <a href="{{ route('edit', $abonent->id) }}" class="list">{{ $abonent->name }}</a>
+                            <a href="{{ route('edit', $abonent->id) }}" class="list">{{ $abonent->patronym }}</a>
+                            <a href="{{ route('edit', $abonent->id) }}" class="list">{{ $abonent->birth_date }}</a>
+                            <a href="{{ route('edit', $abonent->id) }}" class="list">{{ $abonent->phone }}</a>
                             <p class="list">{{ $abonent->division->division_name }}</p>
                         </div>
 

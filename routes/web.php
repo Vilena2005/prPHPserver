@@ -42,6 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/add/newdivision', [\App\Http\Controllers\DivisionController::class, 'div'])->name('add.newdivision');
     Route::post('/add/newdivision', [\App\Http\Controllers\DivisionController::class, 'create'])->name('create');
 
+//    Route::get('/edit/{id}/editDivision', [\App\Http\Controllers\DivisionController::class, 'transform'])->name('transformation');
+//    Route::get('/edit/{id}/editDivision', [\App\Http\Controllers\DivisionController::class, 'reverse'])->name('reverse');
+
 //Помещения
     Route::get('/rooms', [\App\Http\Controllers\RoomController::class, 'room'])->name('rooms');
     Route::get('/add/newroom', [\App\Http\Controllers\RoomController::class, 'new'])->name('add.newroom');
@@ -51,8 +54,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/{id}/editRoom', [\App\Http\Controllers\RoomController::class, 'modify'])->name('modify');
     Route::put('/edit/{id}/editRoom', [\App\Http\Controllers\RoomController::class, 'change'])->name('change');
     Route::delete('/edit/{id}/editRoom', [\App\Http\Controllers\RoomController::class, 'remove'])->name('remove');
-
-//    Route::get('/delete/deleteRoom', [\App\Http\Controllers\RoomController::class, 'modify'])->name('modify');
 
 });
 
