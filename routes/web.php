@@ -4,17 +4,13 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/list', function () {
-//    return view('list');
-//})->name('list');
-
 Route::get('/rooms', function () {
     return view('rooms');
 })->name('rooms');
 
-//Route::get('/division', function () {
-//    return view('division');
-//})->name('division');
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::post('/register', [\App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
